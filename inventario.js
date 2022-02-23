@@ -72,6 +72,9 @@ function plasmarHTML(){
 
     limpiarHTML()
     
+    if(itemArray.length === 0){
+        itemArray = []
+    }else{
     //DOM scripting con todos los datos recabados
     let itemAPlasmar = JSON.parse(localStorage.getItem("itemNuevo"))
     itemAPlasmar.forEach(item => {
@@ -171,6 +174,7 @@ function plasmarHTML(){
 
 
     });
+}
 }
 
 //alertas para la validacion 
