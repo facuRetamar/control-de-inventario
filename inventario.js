@@ -78,6 +78,9 @@ function plasmarHTML(){
    
     //DOM scripting con todos los datos recabados
     let itemAPlasmar = JSON.parse(localStorage.getItem("itemNuevo")) 
+    if(itemAPlasmar.length === 0){
+        return
+    }else{
     itemAPlasmar.forEach(item => {
         item =  new DivItem (item.nombre, item.cantidad)
         const divContainer = document.createElement("div")
@@ -175,7 +178,7 @@ function plasmarHTML(){
 
 
     });
-
+}
 }
 
 //alertas para la validacion 
