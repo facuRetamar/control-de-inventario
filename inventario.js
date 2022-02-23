@@ -9,8 +9,11 @@ itemArray = []
 
 //actualiza la lista de items al refrescar la pagina
 document.addEventListener("DOMContentLoaded", ()=>{
-    itemArray = JSON.parse(localStorage.getItem("itemNuevo"))
+    if(itemArray = JSON.parse(localStorage.getItem("itemNuevo"))){
     plasmarHTML()
+    }else{
+        return
+    }
 })
 
 //registra un nuevo item
@@ -72,11 +75,9 @@ function plasmarHTML(){
 
     limpiarHTML()
     
-    if(itemArray.length === 0){
-        itemArray = []
-    }else{
+   
     //DOM scripting con todos los datos recabados
-    let itemAPlasmar = JSON.parse(localStorage.getItem("itemNuevo"))
+    let itemAPlasmar = JSON.parse(localStorage.getItem("itemNuevo")) 
     itemAPlasmar.forEach(item => {
         item =  new DivItem (item.nombre, item.cantidad)
         const divContainer = document.createElement("div")
@@ -174,7 +175,7 @@ function plasmarHTML(){
 
 
     });
-}
+
 }
 
 //alertas para la validacion 
