@@ -73,13 +73,9 @@ function guardarEnLocal() {
 function plasmarHTML() {
   limpiarHTML(); // Comento todo lo siguiente porque no tiene sentido, para mí... lo explico en la línea 77
 
-  // if(itemsArray.length === 0){
-  //     return
-  // }else{
-  //DOM scripting con todos los datos recabados
-  // let itemAPlasmar = JSON.parse(localStorage.getItem("itemsArray"))
 
-  // acá arriba, estabas llamando a localStorage otra vez para traer lo que ya tenías en la línea 8 en la variable itemsArray
+
+  
 
   itemsArray.forEach((item) => {
     // De acá para abajo, no modifiqué nada. Salvo el identado y el espaciado
@@ -97,6 +93,7 @@ function plasmarHTML() {
     divNumero.innerHTML = `stock disponible: `;
     divNumero.classList.add("div-numero");
     inputNuevo.classList.add("cantidad-nueva");
+    inputNuevo.type = "number"
     divBotones.classList.add("div-botones");
     botonBorrar.classList.add("boton-borrar");
     botonBorrar.innerHTML = `<span class="material-icons-outlined">
